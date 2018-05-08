@@ -8,8 +8,7 @@ miToken = '523275871:AAF-k2MiPzgiIwCL_vt539C3T0pi-RBILMM'
 
 
 def start(bot, update):
-    live = 'bienvenido!\nSoy el bot del Grupo nº 3.\n\n\
-#El comando /menu muestras las opciones'
+    live = 'bienvenido!\nSoy el bot del Grupo nº 3.'
     msj = 'Hola {} {}'.format(update.message.from_user.first_name, live)
     bot.send_message(chat_id=update.message.chat_id, text=msj)
 
