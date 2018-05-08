@@ -32,14 +32,19 @@ def generarLote(bot, update, args):  # /generar lote1
         titulo = "Generador de variable para lote 1"
         bot.send_message(chat_id=update.message.chat_id, text=titulo)
         valor = generador(lote1)
-        msj = "Xi:' {}".format(valor)
+        msj = "Xi: {}".format(valor)
         bot.send_message(chat_id=update.message.chat_id, text=msj)
     elif args[0] == 'lote2':
         titulo = "Generador de variable para lote 2"
         bot.send_message(chat_id=update.message.chat_id, text=titulo)
         valor = generador(lote2)
-        msj = "Xi:' {}".format(valor)
+        msj = "Xi: {}".format(valor)
         bot.send_message(chat_id=update.message.chat_id, text=msj)
+    elif args[0] == "":
+        error = "Error: falta el lote"
+        formato = "formato /generar lote1"
+        bot.send_message(chat_id=update.message.chat_id, text=error)
+        bot.send_message(chat_id=update.message.chat_id, text=formato)
     else:
         error = "error en el comando"
         formato = "formato /generar lote1"
