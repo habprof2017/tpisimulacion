@@ -9,6 +9,14 @@ def start(bot, update):
     live = 'bienvenido!'
     msj = 'Hola {} {}'.format(update.message.from_user.first_name, live)
     bot.send_message(chat_id=update.message.chat_id, text=msj)
+    # lista de comandos
+    bot.send_message(chat_id=update.message.chat_id, text="Comandos:")
+    comandosLote1 = "/generar lote1"
+    paraLote1 = "Generar variable para el lote 1 --> {}".format(comandosLote1)
+    comandosLote2 = "/generar lote2"
+    paraLote2 = "Generar variable para el lote 1 --> {}".format(comandosLote2)
+    bot.send_message(chat_id=update.message.chat_id, text=paraLote1)
+    bot.send_message(chat_id=update.message.chat_id, text=paraLote2)
 
 
 def funcionSaludar(bot, update):
@@ -40,7 +48,7 @@ def generarLote(bot, update, args):  # /generar lote1
         valor = generador(lote2)
         msj = "Xi: {}".format(valor)
         bot.send_message(chat_id=update.message.chat_id, text=msj)
-    elif args[0] == "":
+    elif args[0] is None:
         error = "Error: falta el lote"
         formato = "formato /generar lote1"
         bot.send_message(chat_id=update.message.chat_id, text=error)
