@@ -30,55 +30,19 @@ def generador(lote):
     return valor
 
 
-def generarLote1(bot, update, args):  # /generar lote1
-    if args[0] == 'lote1':
-        titulo = "Generador de variable para lote 1"
-        bot.send_message(chat_id=update.message.chat_id, text=titulo)
-        valor = generador(lote1)
-        msj = "Xi: {}".format(valor)
-        bot.send_message(chat_id=update.message.chat_id, text=msj)
-    elif args[0] == 'lote2':
-        titulo = "Generador de variable para lote 2"
-        bot.send_message(chat_id=update.message.chat_id, text=titulo)
-        valor = generador(lote2)
-        msj = "Xi: {}".format(valor)
-        bot.send_message(chat_id=update.message.chat_id, text=msj)
-    elif args[0] == " ":
-        error = "Error: falta el lote"
-        formato = "formato /generar lote1"
-        bot.send_message(chat_id=update.message.chat_id, text=error)
-        bot.send_message(chat_id=update.message.chat_id, text=formato)
-    else:
-        error = "error en el comando"
-        formato = "formato /generar lote1"
-        bot.send_message(chat_id=update.message.chat_id, text=error)
-        bot.send_message(chat_id=update.message.chat_id, text=formato)
+def generarLote1(bot, update):  # /generar lote1
+    titulo = "Generador de variable para lote 1"
+    bot.send_message(chat_id=update.message.chat_id, text=titulo)
+    valor = generador(lote1)
+    msj = "Xi: {}".format(valor)
+    bot.send_message(chat_id=update.message.chat_id, text=msj)
 
-
-def generarLote2(bot, update, args):  # /generar lote1
-    if args[0] == 'lote1':
-        titulo = "Generador de variable para lote 1"
-        bot.send_message(chat_id=update.message.chat_id, text=titulo)
-        valor = generador(lote1)
-        msj = "Xi: {}".format(valor)
-        bot.send_message(chat_id=update.message.chat_id, text=msj)
-    elif args[0] == 'lote2':
-        titulo = "Generador de variable para lote 2"
-        bot.send_message(chat_id=update.message.chat_id, text=titulo)
-        valor = generador(lote2)
-        msj = "Xi: {}".format(valor)
-        bot.send_message(chat_id=update.message.chat_id, text=msj)
-    elif args[0] == " ":
-        error = "Error: falta el lote"
-        formato = "formato /generar lote1"
-        bot.send_message(chat_id=update.message.chat_id, text=error)
-        bot.send_message(chat_id=update.message.chat_id, text=formato)
-    else:
-        error = "error en el comando"
-        formato = "formato /generar lote1"
-        bot.send_message(chat_id=update.message.chat_id, text=error)
-        bot.send_message(chat_id=update.message.chat_id, text=formato)
-
+def generarLote2(bot, update):  # /generar lote1
+    titulo = "Generador de variable para lote 1"
+    bot.send_message(chat_id=update.message.chat_id, text=titulo)
+    valor = generador(lote1)
+    msj = "Xi: {}".format(valor)
+    bot.send_message(chat_id=update.message.chat_id, text=msj)
 
 def main():
     updater = Updater(token=miToken)
@@ -87,8 +51,8 @@ def main():
     handlers = [
         CommandHandler('start', start),
         CommandHandler('saluda', funcionSaludar),
-        CommandHandler('lote1', generarLote1, pass_args=True),
-        CommandHandler('lote2', generarLote2, pass_args=True),
+        CommandHandler('lote1', generarLote1, pass_args=False),
+        CommandHandler('lote2', generarLote2, pass_args=False),
         # generarLote es la funcion de python
         # /generar es el comando en telegram
     ]
