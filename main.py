@@ -3,9 +3,6 @@ from lotes import lote1, lote2
 import random
 
 miToken = '523275871:AAF-k2MiPzgiIwCL_vt539C3T0pi-RBILMM'
-# token_japo = '516240962:AAHexC09397nI_QTtlQbG5-SDjCfJbaQ2lM'
-# token_simulacion = '523275871:AAF-k2MiPzgiIwCL_vt539C3T0pi-RBILMM'
-
 
 def start(bot, update):
     live = 'bienvenido!\nSoy el bot del Grupo nº 3.'
@@ -29,15 +26,15 @@ def generador(lote):
     return valor
 
 
-def generarLote1(bot, update):  # /generar lote1
-    titulo = "Generador de variable para lote 1"
+def generarLote1(bot, update):  # /lote1
+    titulo = "Generador de variable para Lote 1"
     bot.send_message(chat_id=update.message.chat_id, text=titulo)
     valor = generador(lote1)
     msj = "Xi: {}".format(valor)
     bot.send_message(chat_id=update.message.chat_id, text=msj)
 
-def generarLote2(bot, update):  # /generar lote1
-    titulo = "Generador de variable para lote 1"
+def generarLote2(bot, update):  # /lote2
+    titulo = "Generador de variable para Lote 2"
     bot.send_message(chat_id=update.message.chat_id, text=titulo)
     valor = generador(lote2)
     msj = "Xi: {}".format(valor)
@@ -53,7 +50,7 @@ def main():
         CommandHandler('lote1', generarLote1, pass_args=False),
         CommandHandler('lote2', generarLote2, pass_args=False),
         # generarLote es la funcion de python
-        # /generar es el comando en telegram
+        # /lote1 es el comando en telegram
     ]
 
     for handler in handlers:
