@@ -1,5 +1,6 @@
 from telegram.ext import Updater, CommandHandler
-from generadores import generador
+from lotes import lote1, lote2
+import random
 
 miToken = '523275871:AAF-k2MiPzgiIwCL_vt539C3T0pi-RBILMM'
 
@@ -16,17 +17,27 @@ def funcionSaludar(bot, update):
     bot.send_message(chat_id=update.message.chat_id, text=msj)
 
 
+def generador(lote):
+    minLote = min(lote)
+    maxLote = max(lote)
+    r = round(random.random(), 6)
+
+    valor = round(round(maxLote - minLote, 6) * r + minLote, 6)
+
+    return valor
+
+
 def generarLote(bot, update, args):  # /generar lote1
     if args[0] == 'lote1':
         titulo = "Generador de variable para lote 1"
         bot.send_message(chat_id=update.message.chat_id, text=titulo)
-        valor = generador(args[0])
+        valor = generador(lote1)
         msj = "Xi:' {}".format(valor)
         bot.send_message(chat_id=update.message.chat_id, text=msj)
     elif args[0] == 'lote2':
         titulo = "Generador de variable para lote 2"
         bot.send_message(chat_id=update.message.chat_id, text=titulo)
-        valor = generador(args[0])
+        valor = generador(lote2)
         msj = "Xi:' {}".format(valor)
         bot.send_message(chat_id=update.message.chat_id, text=msj)
     else:
