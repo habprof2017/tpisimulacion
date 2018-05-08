@@ -17,13 +17,13 @@ def funcionSaludar(bot, update):
 
 
 def generarLote(bot, update, args):  # /generar lote1
-    if args == 'lote1':
+    if args[0] == 'lote1':
         titulo = "Generador de variable para lote 1"
         bot.send_message(chat_id=update.message.chat_id, text=titulo)
         valor = generador(lote1)
         msj = "Xi:' {}".format(valor)
         bot.send_message(chat_id=update.message.chat_id, text=msj)
-    elif args == 'lote2':
+    elif args[0] == 'lote2':
         titulo = "Generador de variable para lote 2"
         bot.send_message(chat_id=update.message.chat_id, text=titulo)
         valor = generador(lote2)
