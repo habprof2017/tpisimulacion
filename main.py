@@ -2,7 +2,7 @@ from telegram.ext import Updater, CommandHandler
 from lotes import lote1, lote2
 import random
 
-miToken = '516240962:AAHexC09397nI_QTtlQbG5-SDjCfJbaQ2lM'
+miToken = '523275871:AAF-k2MiPzgiIwCL_vt539C3T0pi-RBILMM'
 # token_japo = '516240962:AAHexC09397nI_QTtlQbG5-SDjCfJbaQ2lM'
 # token_simulacion = '523275871:AAF-k2MiPzgiIwCL_vt539C3T0pi-RBILMM'
 
